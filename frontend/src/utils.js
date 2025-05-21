@@ -1,0 +1,1 @@
+export const BASE_URL = "https://notes-198-be-325333151890.us-central1.run.app";
