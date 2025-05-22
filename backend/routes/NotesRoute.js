@@ -6,23 +6,8 @@ import {
     updateNotes,
     deleteNotes
 } from "../controllers/UserController.js";
-import {
-    Register,
-    Login,
-    refreshToken,
-    logout,
-} from "../controllers/UsersController.js";
-import {
-    verifyToken
-} from "../middleware/verifyToken.js";
 
 const router = express.Router();
-
-// User Routes
-router.get("/token", refreshToken);
-router.post("/register", Register);
-router.post("/login", Login);
-router.delete("/logout", logout);
 
 // Notes Routes
 router.get("/notes/", verifyToken, getNotes);
