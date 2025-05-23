@@ -13,12 +13,12 @@ const Register = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`${BASE_URL}/users`, { // <-- gunakan BASE_URL
+            await axios.post(`${BASE_URL}/users`, { 
                 name,
                 email,
                 password,
                 confPassword
-            }, { withCredentials: true }); // <-- jika backend pakai session
+            }, { withCredentials: true });
             navigate("/login");
         } catch (error) {
             alert("Registrasi gagal: " + (error.response?.data?.msg || error.message));

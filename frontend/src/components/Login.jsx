@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from '../utils'; // <-- tambahkan ini
+import { BASE_URL } from '../utils.js'; 
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -11,10 +11,10 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`${BASE_URL}/login`, {  // <-- gunakan BASE_URL
+            await axios.post(`${BASE_URL}/login`, {  
                 email,
                 password
-            }, { withCredentials: true }); // <-- jika backend pakai cookie/session
+            }, { withCredentials: true }); 
             navigate("/");
         } catch (error) {
             alert("Login gagal: " + (error.response?.data?.msg || error.message));
