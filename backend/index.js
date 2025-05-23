@@ -12,7 +12,7 @@ app.use(cookieParser());
 
 app.use(cors());
 app.use(express.json());
-app.use(NotesRoute);
 app.use(UserRoute);
+app.use(NotesRoute);
 
-app.listen(3000, () => console.log("Server connected"));
+app.listen(5000, () => console.log("Server connected"));

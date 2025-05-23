@@ -7,7 +7,7 @@ import {
   getUserById,
   login,
   logout,
-} from "../controllers/UserController.js";
+} from "../controllers/UsersController.js";
 import { verifyToken } from "../middleware/verifyToken.js";
 import { getAccessToken } from "../controllers/TokenController.js";
 
@@ -26,7 +26,7 @@ router.delete("/logout", logout);
 // makanya kita kasih middleware fungsi verifyToken yg udah kita buat sebelumnya.
 router.get("/users", verifyToken, getUsers);
 router.get("/users/:id", verifyToken, getUserById);
-router.post("/users", createUser);
+router.post("/users/", createUser);
 router.put("/users/:id", verifyToken, updateUser);
 router.delete("/users/:id", verifyToken, deleteUser);
 

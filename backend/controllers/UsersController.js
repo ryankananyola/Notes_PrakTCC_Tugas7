@@ -309,7 +309,7 @@ async function login(req, res) {
       }
     } else {
       // Kalau email salah, masuk ke catch, kasi message "Password atau email salah" (400)
-      const error = new Error("Paassword atau email salah");
+      const error = new Error("Password atau email salah");
       error.statusCode = 400;
       throw error;
     }

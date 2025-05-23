@@ -1,27 +1,52 @@
 GET http://localhost:5000/users
 
 ###
-POST http://localhost:5000/add-users
+POST http://localhost:5000/users/
 Content-Type: application/json
 
 {
     "name": "Ayudya",
     "email": "Ayudya@gmail.com",
+    "gender": "Female",
+    "password": "ayudiacantik",
     "title": "Cihuy",
     "text": "Apasi jir",
     "date": "2025-03-01"
 }
 
 ###
-GET http://localhost:5000/users/6
+POST http://localhost:5000/add-users
 Content-Type: application/json
 
 {
-    "name": "Joni",
-    "email": "jo@gmail.com",
+    "name": "tes",
+    "email": "tes1@tes.com",
+    "gender": "Male",
+    "password": "12345678"
+}
+
+###
+POST http://localhost:5000/add-notes
+Content-Type: application/json
+
+{
+    "name": "Ian",
+    "email": "ian@gmail.com",
     "title": "Cihuy",
     "text": "Apasi jir",
-    "date": "2025-03-01"
+    "date": "2025-05-23"
+}
+
+###
+PUT http://localhost:5000/notes/8
+Content-Type: application/json
+
+{
+    "name": "Ian",
+    "email": "iann@gmail.com",
+    "title": "Cihuy",
+    "text": "Apasi jir",
+    "date": "2025-05-23"
 }
 
 ###
