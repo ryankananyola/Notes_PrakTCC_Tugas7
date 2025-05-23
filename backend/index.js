@@ -15,4 +15,4 @@ app.use(express.json());
 app.use(UserRoute);
 app.use(NotesRoute);
 
-app.listen(5000, () => console.log("Server connected"));
+app.listen(3000, () => console.log("Server connected"));

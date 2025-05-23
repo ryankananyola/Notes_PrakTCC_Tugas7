@@ -1,17 +1,22 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import UserList from "./components/UserList";
-import AddUser from "./components/AddUser";
-import EditUser from "./components/EditUser";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotesList from './components/NotesList';
+import AddNotes from './components/AddNotesjsx';
+import EditNotes from './components/EditNotes';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<UserList />} />
-        <Route path="add" element={<AddUser />} />
-        <Route path="edit/:id" element={<EditUser />} />
+        <Route path="/" element={<NotesList />} />
+        <Route path="/add" element={<AddNotes />} />
+        <Route path="/edit/:id" element={<EditNotes />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

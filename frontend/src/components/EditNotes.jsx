@@ -1,20 +1,25 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../utils";
 
-const AddUser = () => {
+const EditNotes = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     const [date, setDate] = useState("");
     const navigate = useNavigate();
+    const {id} = useParams();
 
-    const saveUser = async (e) => {
+    useEffect(()=>{
+        getNotesById();
+    }, []);
+
+    const updateNotes = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`${BASE_URL}/add-users`, {
+            await axios.put(`${BASE_URL}/Notes/${id}`, {
                 name,
                 email,
                 title,
@@ -27,10 +32,19 @@ const AddUser = () => {
         }
     }
 
+    const getNotesById = async () =>{
+        const response = await axios.get(`${BASE_URL}/notes/${id}`);
+        setName(response.data.name);
+        setEmail(response.data.email);
+        setTitle(response.data.title);
+        setText(response.data.text);
+        setDate(response.data.date);
+    }
+
     return (
         <div className="columns mt-5 is-centered">
             <div className="column is-half">
-                <form onSubmit={saveUser}>
+                <form onSubmit={updateNotes}>
                     <div className="field">
                         <label className="label">Nama</label>
                         <div className="control">
@@ -62,7 +76,7 @@ const AddUser = () => {
                         </div>
                     </div>
                     <div className="field">
-                        <button type="submit" className="button is-success">Save</button>
+                        <button type="submit" className="button is-success">Update</button>
                     </div>
                 </form>
             </div>
@@ -71,4 +85,4 @@ const AddUser = () => {
 
 }
 
-export default AddUser;
+export default EditNotes;
