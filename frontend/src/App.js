@@ -5,6 +5,7 @@ import AddNotes from './components/AddNotes';
 import EditNotes from './components/EditNotes';
 import Login from './components/Login';
 import Register from './components/Register';
+import RequireAuth from './components/RequireAuth';
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<NotesList />} />
-        <Route path="/add-notes" element={<AddNotes />} />
-        <Route path="/notes/:id" element={<EditNotes />} />
+
+        {/* Halaman yang butuh login */}
+        <Route path="/notes/" element={<RequireAuth><NotesList /></RequireAuth>} />
+        <Route path="/add-notes" element={<RequireAuth><AddNotes /></RequireAuth>} />
+        <Route path="/notes/:id" element={<RequireAuth><EditNotes /></RequireAuth>} />
       </Routes>
     </Router>
   );
