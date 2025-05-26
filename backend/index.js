@@ -11,13 +11,10 @@ app.set("view engine", "ejs");
 app.use(cookieParser());
 
 app.use(
-  cors({
-    origin: "http://localhost:3001", 
-    credentials: true,
-  })
+  cors()
 );
 app.use(express.json());
 app.use(UserRoute);
 app.use(NotesRoute);
 
-app.listen(3000, () => console.log("Server connected"));
+app.listen(5000, () => console.log("Server connected"));

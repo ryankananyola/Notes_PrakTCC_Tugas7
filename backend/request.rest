@@ -12,14 +12,14 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/users
+POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "Ryan K Ny",
-    "email": "rknyy@gmail.com",
+    "name": "RyanKNy",
+    "email": "rknnyy@gmail.com",
     "gender": "Male",
-    "password": "ryankny"
+    "password": "ryankny1"
 }
 
 ###

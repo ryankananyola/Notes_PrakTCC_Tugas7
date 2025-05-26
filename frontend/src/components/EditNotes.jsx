@@ -19,7 +19,7 @@ const EditNotes = () => {
     const updateNotes = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`${BASE_URL}/notes/${id}`, {
+            await axios.put(`${BASE_URL}/edit-notes/${id}`, {
                 name,
                 email,
                 title,
