@@ -21,7 +21,7 @@ const AddNotes = () => {
                 text,
                 date
             });
-            navigate("/");
+            navigate("/notes");
         } catch (error) {
             console.log(error);
         }

@@ -11,7 +11,10 @@ app.set("view engine", "ejs");
 app.use(cookieParser());
 
 app.use(
-  cors()
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
 );
 app.use(express.json());
 app.use(UserRoute);

@@ -17,7 +17,7 @@ function App() {
         {/* Halaman yang butuh login */}
         <Route path="/notes/" element={<RequireAuth><NotesList /></RequireAuth>} />
         <Route path="/add-notes" element={<RequireAuth><AddNotes /></RequireAuth>} />
-        <Route path="/notes/:id" element={<RequireAuth><EditNotes /></RequireAuth>} />
+        <Route path="/edit-notes/:id" element={<RequireAuth><EditNotes /></RequireAuth>} />
       </Routes>
     </Router>
   );
