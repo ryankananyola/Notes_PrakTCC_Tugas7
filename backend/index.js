@@ -13,7 +13,7 @@ app.use(cookieParser());
 app.use(
   cors(
     {
-      origin: "http://localhost:3000",
+      origin: ["http://localhost:3000", "https://notesryan-dot-g-08-450802.uc.r.appspot.com"],
       credentials: true,
     }
   )
